@@ -3,13 +3,7 @@ from manim import *
 class Test(Scene):
     def construct(self):
         
-        circle = Circle(color=RED, radius=2)
-        square = Square(color=BLUE, side_length=4)
-        text = Text("Hello World")
-
-        self.play(Write(text))
-        self.play(Create(circle))
-
-        self.wait(1)
-
-        self.play(Create(square))
+        a = Axes(x_range=[-1,10],y_range=[-1,10])
+        graph = a.plot(lambda n : n*n)
+        g = a.plot(lambda x: 2*x)
+        self.add(graph,a,g)
